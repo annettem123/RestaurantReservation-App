@@ -24,6 +24,17 @@ public class Reservation {
     @Column
     private Integer customer_Id;
 
+    public Reservation(Long id, Integer table_Id, Integer customer_Id, String date, String time, String Integer party_of, Integer customer_Id) {
+        this.id = id;
+        this.table_Id = table_Id;
+        this.customer_Id = customer_Id;
+        this.date = date;
+        this.time = time;
+        this.party_of = party_of;
+        this.customer_Id = customer_Id;
+    }
+
+
     public Long getId() {
         return id;
     }
