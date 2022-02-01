@@ -12,6 +12,12 @@ public class Table {
     @Column
     private Integer reservation_Id;
 
+    public Table(Long id, Integer number_of_seats, Integer reservation_Id) {
+        this.id = id;
+        this.number_of_seats = number_of_seats;
+        this.reservation_Id = reservation_Id;
+    }
+
     public Long getId() {
         return id;
     }
