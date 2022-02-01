@@ -1,5 +1,7 @@
 package com.rest.reservations.model;
 
+import org.springframework.boot.autoconfigure.domain.EntityScan;
+
 @Entity
 @Table(name = "customer") // created a new table called customer
 public class Customer {

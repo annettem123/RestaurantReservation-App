@@ -1,7 +1,6 @@
 package com.rest.reservations.model;
 
-@Entity
-@Table(name = "reservation") // created a new table called reservation
+
 public class Reservation {
     @Id
     @Column
@@ -26,7 +25,7 @@ public class Reservation {
     @Column
     private Integer customer_Id;
 
-    public Reservation(Long id, Integer table_Id, Integer customer_Id, String date, String time, String Integer party_of, Integer customer_Id) {
+    public Reservation(Long id, Integer table_Id, Integer customer_Id, String date, String time, Integer party_of, Integer customer_Id) {
         this.id = id;
         this.table_Id = table_Id;
         this.customer_Id = customer_Id;
@@ -61,7 +60,7 @@ public class Reservation {
         this.customer_Id = customer_Id;
     }
 
-    public String getDate(String date){
+    public String getDate(String date) {
         return date;
     }
 
@@ -84,5 +83,6 @@ public class Reservation {
     public void setParty_of(Integer party_of) {
         this.party_of = party_of;
     }
+}
 
 
