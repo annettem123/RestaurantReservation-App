@@ -1,5 +1,7 @@
 package com.rest.reservations.model;
 
+@Entity
+@Table(name = "reservation") // created a new table called reservation
 public class Reservation {
     @Id
     @Column

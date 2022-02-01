@@ -14,7 +14,7 @@ public class Server {
 
     @Column
     private Integer table_Id;
-    
+
     public Server(Long id, String first_name, String last_name, Integer table_Id) {
         this.id = id;
         this.first_name = first_name;
