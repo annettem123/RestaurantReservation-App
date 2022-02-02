@@ -1,7 +1,8 @@
 package com.rest.reservations.model;
 
-@Entity
-@Table(name = "table") // created a new table called table
+import javax.persistence.Entity;
+
+
 public class Table {
     @Id
     @Column
