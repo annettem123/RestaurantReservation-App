@@ -1,33 +1,33 @@
 package com.rest.reservations.Controller;
 
-        import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping(path = "/api")
 public class CustomerController {
 
-    @GetMapping(path = "/customer/")
-    public String getCustomer() {
-        return "get all customer";
+    @GetMapping(path = "/customers/")
+    public String getCustomers() {
+        return "get all customers";
     }
 
-    @GetMapping(path = "/customer/{customerId}")
-    public String getCustomer(@PathVariable Long customerId) {
-        return "getting the customer with the id of " + customerId;
+    @GetMapping(path = "/customers/{customerID}")
+    public String getCustomer(@PathVariable Long customerID) {
+        return "getting the customer with the id of " + customerID;
     }
 
-    @PostMapping("/customer/")
+    @PostMapping("/customers/")
     public String createCustomer(@RequestBody String body) {
         return "creating a customer " + body;
     }
 
-    @PutMapping("/categories/{categoryId}")
-    public String updateCustomer(@PathVariable(value = "categoryId") Long categoryId, @RequestBody String body) {
-        return "updating the category with the id of " + categoryId + body;
+    @PutMapping("/customers/{customerID}")
+    public String updateCustomer(@PathVariable(value = "customerID") Long customerID, @RequestBody String body) {
+        return "updating the customer with the id of " + customerID + body;
     }
 
-    @DeleteMapping("/categories/{categoryId}")
-    public String deleteCustomer(@PathVariable(value = "categoryId") Long categoryId) {
-        return "deleting the category with the id of " + categoryId;
+    @DeleteMapping("/customers/{customerID}")
+    public String deleteCustomer(@PathVariable(value = "customerID") Long customerID) {
+        return "deleting the customer with the id of " + customerID;
     }
 }
