@@ -1,8 +1,7 @@
 package com.rest.reservations.model;
 
-import org.springframework.boot.autoconfigure.domain.EntityScan;
-
-import javax.persistence.Entity;
+import javax.persistence.*;
+import javax.persistence.Table;
 
 
 public class Customer {
@@ -23,17 +22,13 @@ public class Customer {
     @Column
     private String email;
 
-    @Column
-    private Integer reservation_Id;
-
-    public Customer(Long id, String first_name, String last_name, String mobile_number, String email, Integer reservation_Id) {
+      public Customer(Long id, String first_name, String last_name, String mobile_number, String email) {
         this.id = id;
         this.first_name = first_name;
         this.last_name = last_name;
         this.mobile_number = mobile_number;
         this.email = email;
-        this.reservation_Id = reservation_Id;
-    }
+      }
 
     public Long getId() {
         return id;
@@ -75,11 +70,4 @@ public class Customer {
         this.email = email;
     }
 
-    public Integer getReservation_Id() {
-        return reservation_Id;
-    }
-
-    public void setReservation_Id(Integer reservation_Id) {
-        this.reservation_Id = reservation_Id;
-    }
 }

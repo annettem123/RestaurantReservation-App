@@ -1,6 +1,6 @@
 package com.rest.reservations.model;
 
-import javax.persistence.Entity;
+import javax.persistence.*;
 
 
 public class Server {
