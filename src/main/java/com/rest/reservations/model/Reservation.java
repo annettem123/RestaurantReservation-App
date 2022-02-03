@@ -3,7 +3,7 @@ package com.rest.reservations.model;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "reservations") // created a new table called customer
+@Table(name = "reservations") // created a new table called reservations
 public class Reservation {
     @Id
     @Column
