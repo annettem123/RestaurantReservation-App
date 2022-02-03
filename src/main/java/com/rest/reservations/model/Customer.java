@@ -12,16 +12,19 @@ public class Customer {
     private Long id;
 
     @Column
-    private String first_name;
+    private String firstName;
 
     @Column
-    private String last_name;
+    private String lastName;
 
     @Column
-    private String mobile_number;
+    private String mobileNumber;
 
     @Column
     private String email;
+
+    public Customer() {
+    }
 
       public Customer(Long id, String first_name, String last_name, String mobile_number, String email) {
         this.id = id;
@@ -30,6 +33,17 @@ public class Customer {
         this.mobile_number = mobile_number;
         this.email = email;
       }
+
+    @Override
+    public String toString() {
+        return "Customer{" +
+                "id=" + id +
+                ", first_name='" + first_name + '\'' +
+                ", last_name='" + last_name + '\'' +
+                ", mobile_number='" + mobile_number + '\'' +
+                ", email='" + email + '\'' +
+                '}';
+    }
 
     public Long getId() {
         return id;
