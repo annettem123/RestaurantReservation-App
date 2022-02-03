@@ -1,6 +1,7 @@
 package com.rest.reservations.model;
 
 import javax.persistence.*;
+import javax.persistence.Table;
 
 @Entity
 @Table(name = "servers") // created a new table called servers
@@ -16,6 +17,8 @@ public class Server {
     @Column
     private String lastName;
 
+    public Server() {
+    }
     public Server(Long id, String firstName, String lastName) {
         this.id = id;
         this.firstName = firstName;

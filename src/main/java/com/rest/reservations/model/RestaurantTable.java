@@ -2,11 +2,11 @@ package com.rest.reservations.model;
 
 import javax.persistence.*;
 
-
 @Entity
-@Table(name = "tables") // created a new table called tables
+@Table(name = "tables")// created a new table called tables
 
-public class Table {
+public class RestaurantTable {
+
     @Id
     @Column
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -16,12 +16,14 @@ public class Table {
     private Integer numberOfSeats;
 
     @Column
-    private Integer reservationId;
+    private Integer tableNumber;
 
-    public Table(Long id, Integer numberOfSeats, Integer reservationId) {
+    public RestaurantTable() {
+    }
+    public RestaurantTable(Long id, Integer numberOfSeats, Integer tableNumber) {
         this.id = id;
         this.numberOfSeats = numberOfSeats;
-        this.reservationId = reservationId;
+        this.tableNumber = tableNumber;
     }
 
     public Long getId() {
@@ -40,11 +42,11 @@ public class Table {
         this.numberOfSeats = numberOfSeats;
     }
 
-    public Integer getReservationId() {
-        return reservationId;
+    public Integer getTableNumber() {
+        return tableNumber;
     }
 
-    public void setReservationId(Integer reservationId) {
-        this.reservationId = reservationId;
+    public void setTableNumber(Integer tableNumber) {
+        this.tableNumber = tableNumber;
     }
 }
