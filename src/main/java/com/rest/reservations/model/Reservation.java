@@ -2,7 +2,8 @@ package com.rest.reservations.model;
 
 import javax.persistence.*;
 
-
+@Entity
+@Table(name = "reservations") // created a new table called customer
 public class Reservation {
     @Id
     @Column
@@ -20,9 +21,6 @@ public class Reservation {
 
     @Column
     private Integer partyOf;
-
-    @Column
-    private Integer customerId;
 
     public Reservation(Long id, Integer tableId, String date, String time, Integer partyOf, Integer customerId) {
         this.id = id;

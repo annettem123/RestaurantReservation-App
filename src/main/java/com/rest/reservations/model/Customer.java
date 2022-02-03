@@ -26,6 +26,10 @@ public class Customer {
     public Customer() {
     }
 
+    //one to many
+
+//    list of reservation
+
       public Customer(Long id, String firstName, String lastName, String mobileNumber, String email) {
         this.id = id;
         this.firstName = firstName;
