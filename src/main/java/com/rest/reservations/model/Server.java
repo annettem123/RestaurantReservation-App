@@ -16,14 +16,10 @@ public class Server {
     @Column
     private String lastName;
 
-    @Column
-    private Integer tableId;
-
-    public Server(Long id, String firstName, String lastName, Integer tableId) {
+    public Server(Long id, String firstName, String lastName) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
-        this.tableId = tableId;
     }
 
     public Long getId() {
@@ -50,11 +46,4 @@ public class Server {
         this.lastName = lastName;
     }
 
-    public Integer getTableId() {
-        return tableId;
-    }
-
-    public void setTableId(Integer tableId) {
-        this.tableId = tableId;
-    }
 }
