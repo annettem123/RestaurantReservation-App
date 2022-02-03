@@ -10,7 +10,7 @@ public class Reservation {
     private Long id;
 
     @Column
-    private Integer table_Id;
+    private Integer tableId;
 
     @Column
     private String date;
@@ -19,20 +19,19 @@ public class Reservation {
     private String time;
 
     @Column
-    private Integer party_of;
+    private Integer partyOf;
 
     @Column
-    private Integer customer_Id;
+    private Integer customerId;
 
-    public Reservation(Long id, Integer table_Id, String date, String time, Integer party_of, Integer customer_Id) {
+    public Reservation(Long id, Integer tableId, String date, String time, Integer partyOf, Integer customerId) {
         this.id = id;
-        this.table_Id = table_Id;
+        this.tableId = tableId;
         this.date = date;
         this.time = time;
-        this.party_of = party_of;
-        this.customer_Id = customer_Id;
+        this.partyOf = partyOf;
+        this.customerId = customerId;
     }
-
 
     public Long getId() {
         return id;
@@ -42,20 +41,20 @@ public class Reservation {
         this.id = id;
     }
 
-    public Integer getTable_Id() {
-        return table_Id;
+    public Integer getTableId() {
+        return tableId;
     }
 
-    public void setTable_Id(Integer table_Id) {
-        this.table_Id = table_Id;
+    public void setTableId(Integer tableId) {
+        this.tableId = tableId;
     }
 
-    public Integer getCustomer_Id(Integer customer_Id) {
-        return customer_Id;
+    public Integer getCustomerId(Integer customerId) {
+        return customerId;
     }
 
-    public void setCustomer_Id(Integer customer_Id) {
-        this.customer_Id = customer_Id;
+    public void setCustomerId(Integer customerId) {
+        this.customerId = customerId;
     }
 
     public String getDate(String date) {
@@ -74,12 +73,12 @@ public class Reservation {
         this.time = time;
     }
 
-    public Integer getParty_of(Integer party_of) {
-        return party_of;
+    public Integer getPartyOf(Integer partyOf) {
+        return partyOf;
     }
 
-    public void setParty_of(Integer party_of) {
-        this.party_of = party_of;
+    public void setPartyOf(Integer partyOf) {
+        this.partyOf = partyOf;
     }
 }
 

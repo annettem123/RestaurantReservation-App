@@ -10,19 +10,19 @@ public class Server {
     private Long id;
 
     @Column
-    private String first_name;
+    private String firstName;
 
     @Column
-    private String last_name;
+    private String lastName;
 
     @Column
-    private Integer table_Id;
+    private Integer tableId;
 
-    public Server(Long id, String first_name, String last_name, Integer table_Id) {
+    public Server(Long id, String firstName, String lastName, Integer tableId) {
         this.id = id;
-        this.first_name = first_name;
-        this.last_name = last_name;
-        this.table_Id = table_Id;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.tableId = tableId;
     }
 
     public Long getId() {
@@ -33,27 +33,27 @@ public class Server {
         this.id = id;
     }
 
-    public String getFirst_name() {
-        return first_name;
+    public String getFirstName() {
+        return firstName;
     }
 
-    public void setFirst_name(String first_name) {
-        this.first_name = first_name;
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
     }
 
-    public String getLast_name() {
-        return last_name;
+    public String getLastName() {
+        return lastName;
     }
 
-    public void setLast_name(String last_name) {
-        this.last_name = last_name;
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 
-    public Integer getTable_Id() {
-        return table_Id;
+    public Integer getTableId() {
+        return tableId;
     }
 
-    public void setTable_Id(Integer table_Id) {
-        this.table_Id = table_Id;
+    public void setTableId(Integer tableId) {
+        this.tableId = tableId;
     }
 }

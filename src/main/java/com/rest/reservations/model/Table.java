@@ -10,15 +10,15 @@ public class Table {
     private Long id;
 
     @Column
-    private Integer number_of_seats;
+    private Integer numberOfSeats;
 
     @Column
-    private Integer reservation_Id;
+    private Integer reservationId;
 
-    public Table(Long id, Integer number_of_seats, Integer reservation_Id) {
+    public Table(Long id, Integer numberOfSeats, Integer reservationId) {
         this.id = id;
-        this.number_of_seats = number_of_seats;
-        this.reservation_Id = reservation_Id;
+        this.numberOfSeats = numberOfSeats;
+        this.reservationId = reservationId;
     }
 
     public Long getId() {
@@ -29,19 +29,19 @@ public class Table {
         this.id = id;
     }
 
-    public Integer getNumber_of_seats() {
-        return number_of_seats;
+    public Integer getNumberOfSeats() {
+        return numberOfSeats;
     }
 
-    public void setNumber_of_seats(Integer number_of_seats) {
-        this.number_of_seats = number_of_seats;
+    public void setNumberOfSeats(Integer numberOfSeats) {
+        this.numberOfSeats = numberOfSeats;
     }
 
-    public Integer getReservation_Id() {
-        return reservation_Id;
+    public Integer getReservationId() {
+        return reservationId;
     }
 
-    public void setReservation_Id(Integer reservation_Id) {
-        this.reservation_Id = reservation_Id;
+    public void setReservationId(Integer reservationId) {
+        this.reservationId = reservationId;
     }
 }
