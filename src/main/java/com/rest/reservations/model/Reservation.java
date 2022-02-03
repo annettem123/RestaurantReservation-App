@@ -11,9 +11,6 @@ public class Reservation {
     private Long id;
 
     @Column
-    private Integer tableId;
-
-    @Column
     private String date;
 
     @Column
@@ -22,13 +19,11 @@ public class Reservation {
     @Column
     private Integer partyOf;
 
-    public Reservation(Long id, Integer tableId, String date, String time, Integer partyOf, Integer customerId) {
+    public Reservation(Long id, String date, String time, Integer partyOf) {
         this.id = id;
-        this.tableId = tableId;
         this.date = date;
         this.time = time;
         this.partyOf = partyOf;
-        this.customerId = customerId;
     }
 
     public Long getId() {
@@ -37,22 +32,6 @@ public class Reservation {
 
     public void setId(Long id) {
         this.id = id;
-    }
-
-    public Integer getTableId() {
-        return tableId;
-    }
-
-    public void setTableId(Integer tableId) {
-        this.tableId = tableId;
-    }
-
-    public Integer getCustomerId(Integer customerId) {
-        return customerId;
-    }
-
-    public void setCustomerId(Integer customerId) {
-        this.customerId = customerId;
     }
 
     public String getDate(String date) {
