@@ -1,7 +1,11 @@
 package com.rest.reservations.model;
 
+import org.hibernate.annotations.LazyCollection;
+import org.hibernate.annotations.LazyCollectionOption;
+
 import javax.persistence.*;
 import javax.persistence.Table;
+import java.util.List;
 
 @Entity
 @Table(name = "customers") // created a new table called customer
@@ -26,9 +30,9 @@ public class Customer {
     public Customer() {
     }
 
-    //one to many
-
-//    list of reservation
+    @OneToMany(mappedBy = "customer", orphanRemoval = true)
+    @LazyCollection(LazyCollectionOption.FALSE)
+    private List<Reservation> reservationList;
 
       public Customer(Long id, String firstName, String lastName, String mobileNumber, String email) {
         this.id = id;
@@ -47,6 +51,14 @@ public class Customer {
                 ", mobileNumber='" + mobileNumber + '\'' +
                 ", email='" + email + '\'' +
                 '}';
+    }
+
+    public List<Reservation> getReservationList() {
+        return reservationList;
+    }
+
+    public void setReservationList(List<Reservation> reservationList) {
+        this.reservationList = reservationList;
     }
 
     public Long getId() {

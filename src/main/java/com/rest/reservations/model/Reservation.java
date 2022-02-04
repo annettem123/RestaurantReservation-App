@@ -1,5 +1,7 @@
 package com.rest.reservations.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 import javax.persistence.Table;
 
@@ -11,6 +13,9 @@ public class Reservation {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    public Reservation() {
+    }
+
     @Column
     private String date;
 
@@ -19,6 +24,19 @@ public class Reservation {
 
     @Column
     private Integer partyOf;
+
+    @JsonIgnore
+    @ManyToOne
+    @JoinColumn(name = "customer_id")
+    private Customer customer;
+
+    public Customer getCustomer() {
+        return customer;
+    }
+
+    public void setCustomer(Customer customer) {
+        this.customer = customer;
+    }
 
     public Reservation(Long id, String date, String time, Integer partyOf) {
         this.id = id;
@@ -35,7 +53,7 @@ public class Reservation {
         this.id = id;
     }
 
-    public String getDate(String date) {
+    public String getDate() {
         return date;
     }
 
@@ -43,7 +61,7 @@ public class Reservation {
         this.date = date;
     }
 
-    public String getTime(String time) {
+    public String getTime() {
         return time;
     }
 
@@ -51,7 +69,7 @@ public class Reservation {
         this.time = time;
     }
 
-    public Integer getPartyOf(Integer partyOf) {
+    public Integer getPartyOf() {
         return partyOf;
     }
 
