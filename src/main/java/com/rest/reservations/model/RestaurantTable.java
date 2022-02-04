@@ -15,8 +15,7 @@ public class RestaurantTable {
     @Column
     private Integer numberOfSeats;
 
-    @Column
-    private Integer tableNumber;
+    @Column    private Integer tableNumber;
 
     public RestaurantTable() {
     }
