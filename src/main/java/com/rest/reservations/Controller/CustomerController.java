@@ -5,11 +5,15 @@ import com.rest.reservations.repository.CustomerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+import java.util.Optional;
+import java.util.concurrent.Callable;
+
 @RestController
 @RequestMapping(path = "/api")
 public class CustomerController {
     private CustomerRepository customerRepository;
-    
+
 
     @Autowired
     public void setCustomerRepository(CustomerRepository customerRepository) {
@@ -17,13 +21,13 @@ public class CustomerController {
     }
 
     @GetMapping("/customers/")
-    public String getCustomers() {
-        return "get all customers";
+    public List<Customer> getCustomers() {
+        return customerRepository.findAll();
     }
 
     @GetMapping(path = "/customers/{customerID}")
-    public String getCustomer(@PathVariable Long customerID) {
-        return "getting the customer with the id of " + customerID;
+    public Optional<Customer> getCustomer(@PathVariable Long customerID) {
+        return customerRepository.findById(customerID);
     }
 
     @PostMapping("/customers/")
@@ -31,13 +35,17 @@ public class CustomerController {
         return customerRepository.save(body);
     }
 
+
     @PutMapping("/customers/{customerID}")
-    public String updateCustomer(@PathVariable(value = "customerID") Long customerID, @RequestBody String body) {
-        return "updating the customer with the id of " + customerID + body;
+    public Customer updateCustomer(@PathVariable(value = "customerID") Long customerID, @RequestBody Customer body) {
+        Customer customer = customerRepository.findCustomerById(customerID);
+        customer.setLastName(body.getLastName());
+        return customerRepository.save(customer);
     }
 
     @DeleteMapping("/customers/{customerID}")
     public String deleteCustomer(@PathVariable(value = "customerID") Long customerID) {
+        customerRepository.deleteById(customerID);
         return "deleting the customer with the id of " + customerID;
     }
 }
