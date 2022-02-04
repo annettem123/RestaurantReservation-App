@@ -41,6 +41,7 @@ public class CustomerController {
         Customer customer = customerRepository.findCustomerById(customerID);
         customer.setFirstName(body.getLastName());
         customer.setLastName(body.getLastName());
+        customer.setMobileNumber(body.getLastName());
         return customerRepository.save(customer);
     }
 
