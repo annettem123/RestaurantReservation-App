@@ -1,12 +1,22 @@
 package com.rest.reservations.Controller;
 
+import com.rest.reservations.model.Customer;
+import com.rest.reservations.repository.CustomerRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping(path = "/api")
 public class CustomerController {
+    private CustomerRepository customerRepository;
+    
 
-    @GetMapping(path = "/customers/")
+    @Autowired
+    public void setCustomerRepository(CustomerRepository customerRepository) {
+        this.customerRepository = customerRepository;
+    }
+
+    @GetMapping("/customers/")
     public String getCustomers() {
         return "get all customers";
     }
@@ -17,8 +27,8 @@ public class CustomerController {
     }
 
     @PostMapping("/customers/")
-    public String createCustomer(@RequestBody String body) {
-        return "creating a customer " + body;
+    public Customer createCustomer(@RequestBody Customer body) {
+        return customerRepository.save(body);
     }
 
     @PutMapping("/customers/{customerID}")
