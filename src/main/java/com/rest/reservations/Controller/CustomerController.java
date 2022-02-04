@@ -39,9 +39,10 @@ public class CustomerController {
     @PutMapping("/customers/{customerID}")
     public Customer updateCustomer(@PathVariable(value = "customerID") Long customerID, @RequestBody Customer body) {
         Customer customer = customerRepository.findCustomerById(customerID);
-        customer.setFirstName(body.getLastName());
+        customer.setFirstName(body.getFirstName());
         customer.setLastName(body.getLastName());
-        customer.setMobileNumber(body.getLastName());
+        customer.setMobileNumber(body.getMobileNumber());
+        customer.setEmail(body.getEmail());
         return customerRepository.save(customer);
     }
 
