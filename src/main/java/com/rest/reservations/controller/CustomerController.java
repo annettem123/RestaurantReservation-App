@@ -1,4 +1,4 @@
-package com.rest.reservations.Controller;
+package com.rest.reservations.controller;
 
 import com.rest.reservations.model.Customer;
 import com.rest.reservations.model.Reservation;
@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Optional;
-import java.util.concurrent.Callable;
 
 @RestController
 @RequestMapping(path = "/api")
